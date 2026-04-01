@@ -1,0 +1,14 @@
+# Claude Code 로컬 설정
+.claude/settings.local.json
+
+# 민감 정보
+.env
+.env.*
+*secret*.yml
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
