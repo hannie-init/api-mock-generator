@@ -1,7 +1,8 @@
 # api-mock-generator
 
 엑셀 API 명세를 붙여넣으면 Request/Response Mock JSON을 자동 생성하는 Claude Code 커스텀 스킬.
-중계 서버의 응답으로 mock data를 생성함 (병원 응답이 아님)
+
+**중계 서버의 응답으로 mock data를 생성함 (병원 응답이 아님)**
 
 
 ## 개요
