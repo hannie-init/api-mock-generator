@@ -1,6 +1,8 @@
 # api-mock-generator
 
 엑셀 API 명세를 붙여넣으면 Request/Response Mock JSON을 자동 생성하는 Claude Code 커스텀 스킬.
+중계 서버의 응답으로 mock data를 생성함 (병원 응답이 아님)
+
 
 ## 개요
 
@@ -16,9 +18,14 @@ mock 생성 / mock data 생성 / api mock / mock json
 목 데이터 생성 / 테스트 데이터 생성 / api 명세로 mock / 명세 붙여넣기
 ```
 
-## 사용법
+## 사용 예시
+<img width="1338" height="594" alt="스크린샷 2026-04-01 오전 10 56 41" src="https://github.com/user-attachments/assets/265017fa-60ba-461b-878e-63e7296b9a01" />
+<img width="1201" height="977" alt="스크린샷 2026-04-01 오전 10 57 01" src="https://github.com/user-attachments/assets/a3faa13c-4295-43d5-b0a3-66e6a56070b9" />
+<img width="1253" height="784" alt="스크린샷 2026-04-01 오전 10 57 18" src="https://github.com/user-attachments/assets/710946f3-90dd-4f28-9db9-ba314d26fa06" />
 
-### 1. 엑셀 텍스트 붙여넣기 (기본)
+
+## 2가지 사용법
+### 1. 엑셀 텍스트 붙여넣기
 
 엑셀에서 API 명세 셀을 선택 후 복사(Ctrl+C) → Claude 채팅창에 바로 붙여넣기
 
@@ -28,28 +35,20 @@ mock 생성 / mock data 생성 / api mock / mock json
 [엑셀 텍스트 붙여넣기]
 ```
 
-### 2. Python 스크립트 (복잡한 명세)
+### 2. xlsx 엑셀 파일 제공 + API 번호(ex. H_01) 입력
 
-```bash
-# TSV 텍스트 파일
-python3 scripts/generate_mock.py spec.txt
+xlsx 파일 경로를 Claude 채팅창에 입력
 
-# stdin
-cat spec.txt | python3 scripts/generate_mock.py
-
-# xlsx 파일 (전체 시트)
-python3 scripts/generate_mock.py spec.xlsx
-
-# xlsx + API 번호 필터링
-python3 scripts/generate_mock.py spec.xlsx --api "API-001"
-
-# xlsx + 시트명 지정
-python3 scripts/generate_mock.py spec.xlsx --sheet "단위서비스명세" --api "API-001"
 ```
+~/Download/interface-api-docs.xlsx
+```
+
 
 > 의존성(`openpyxl`)은 첫 실행 시 자동 설치된다.
 
+
 ## 출력 형식
+중계 서버의 응답으로 mock data를 생성함 (병원 응답이 아님)
 
 ### Response (공통 래퍼 적용)
 
